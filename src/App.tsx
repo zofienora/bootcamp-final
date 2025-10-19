@@ -51,17 +51,17 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200">
-        <div className="max-w-4xl mx-auto px-4 py-6">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+      <header className="bg-white border-b-2 border-gray-200 sticky top-0 z-50">
+        <div className="max-w-6xl mx-auto px-6 py-8">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">CycleSync</h1>
-              <p className="text-gray-600">Nutrition and movement guidance for your cycle</p>
+              <h1 className="text-5xl font-black text-gray-900 tracking-tight mb-3">CycleSync</h1>
+              <p className="text-gray-600 text-lg font-medium">Nutrition and movement guidance for your cycle</p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-6">
               <div>
-                <label htmlFor="cycle-start" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="cycle-start" className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">
                   Cycle Start Date
                 </label>
                 <input
@@ -69,12 +69,12 @@ function App() {
                   type="date"
                   value={userData.cycleStart}
                   onChange={(e) => handleCycleStartChange(e.target.value)}
-                  className="w-full sm:w-auto px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
+                  className="w-full sm:w-auto px-4 py-3 border-2 border-gray-300 rounded-none focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900 font-medium transition-all duration-200"
                 />
               </div>
               
               <div>
-                <label htmlFor="cycle-length" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="cycle-length" className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">
                   Average Length (days)
                 </label>
                 <input
@@ -84,7 +84,7 @@ function App() {
                   max="35"
                   value={userData.averageLength}
                   onChange={(e) => handleAverageLengthChange(parseInt(e.target.value) || 28)}
-                  className="w-full sm:w-auto px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
+                  className="w-full sm:w-auto px-4 py-3 border-2 border-gray-300 rounded-none focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900 font-medium transition-all duration-200"
                 />
               </div>
             </div>
@@ -93,13 +93,13 @@ function App() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-4 py-8">
+      <main className="max-w-6xl mx-auto px-6 py-12">
         {/* Tab Navigation */}
-        <div className="mb-8">
-          <nav className="flex space-x-8 border-b border-gray-200">
+        <div className="mb-12">
+          <nav className="flex space-x-12 border-b-2 border-gray-200">
             <button
               onClick={() => setActiveTab('today')}
-              className={`py-2 px-1 border-b-2 font-medium text-sm transition-colors ${
+              className={`py-4 px-1 border-b-4 font-bold text-lg uppercase tracking-wide transition-all duration-200 ${
                 activeTab === 'today'
                   ? 'border-gray-900 text-gray-900'
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
@@ -109,7 +109,7 @@ function App() {
             </button>
             <button
               onClick={() => setActiveTab('browse')}
-              className={`py-2 px-1 border-b-2 font-medium text-sm transition-colors ${
+              className={`py-4 px-1 border-b-4 font-bold text-lg uppercase tracking-wide transition-all duration-200 ${
                 activeTab === 'browse'
                   ? 'border-gray-900 text-gray-900'
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
@@ -139,9 +139,9 @@ function App() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-gray-200 mt-16">
-        <div className="max-w-4xl mx-auto px-4 py-6">
-          <p className="text-sm text-gray-500 text-center">
+      <footer className="bg-white border-t-2 border-gray-200 mt-20">
+        <div className="max-w-6xl mx-auto px-6 py-8">
+          <p className="text-sm text-gray-500 text-center font-medium leading-relaxed">
             This app provides general wellness guidance and is not a substitute for medical advice. 
             Always consult with healthcare professionals for medical concerns.
           </p>

@@ -1,73 +1,76 @@
-# React + TypeScript + Vite
+# CycleSync
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + TypeScript web app that helps women get daily nutrition and exercise tips based on their menstrual cycle phase.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Cycle Tracking**: Set your cycle start date and average length
+- **Phase Detection**: Automatically calculates current cycle day and phase
+- **Today View**: Shows current phase, day number, and 3 relevant tips (2 nutrition, 1 movement)
+- **Browse Section**: Explore all phases and their tips
+- **Favorites**: Save your favorite tips with localStorage persistence
+- **Responsive Design**: Clean, minimal, editorial aesthetics inspired by Rick Owens/Margiela
 
-## React Compiler
+## Cycle Phases
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Menstrual** (Days 1-5): Rest, reflection, and gentle self-care
+- **Follicular** (Days 6-13): Energy building, new challenges
+- **Ovulatory** (Days 14-17): Peak energy and confidence
+- **Luteal** (Days 18-28): Processing, planning, and intuition
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React 18 + TypeScript
+- Vite for build tooling
+- Tailwind CSS for styling
+- Heroicons for icons
+- localStorage for data persistence
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. Start development server:
+   ```bash
+   npm run dev
+   ```
+
+3. Build for production:
+   ```bash
+   npm run build
+   ```
+
+## Project Structure
+
+```
+src/
+├── components/          # React components
+│   ├── PhaseBadge.tsx  # Phase indicator badge
+│   ├── PhaseTabs.tsx   # Phase browsing interface
+│   ├── TipCard.tsx     # Individual tip display
+│   └── TodayCard.tsx   # Today's view component
+├── data/               # Sample data
+│   └── sampleData.ts   # Default tips and phase data
+├── lib/                # Utility functions
+│   ├── cycleUtils.ts   # Cycle calculation logic
+│   └── storage.ts      # localStorage helpers
+├── types/              # TypeScript definitions
+│   └── index.ts        # Type interfaces
+├── App.tsx             # Main application component
+└── main.tsx            # Application entry point
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Design Philosophy
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Minimal**: Clean, uncluttered interface
+- **Editorial**: Bold typography and spacing
+- **Accessible**: Semantic HTML and proper contrast
+- **Responsive**: Works on all device sizes
+- **Client-side**: No backend required, all data stored locally
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Disclaimer
+
+This app provides general wellness guidance and is not a substitute for medical advice. Always consult with healthcare professionals for medical concerns.
