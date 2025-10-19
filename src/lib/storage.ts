@@ -1,4 +1,4 @@
-import { UserData } from '../types';
+import type { UserData } from '../types';
 
 const STORAGE_KEY = 'cyclesync-user-data';
 

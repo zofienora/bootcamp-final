@@ -1,4 +1,4 @@
-import { Tip } from '../types';
+import type { Tip } from '../types';
 import { HeartIcon } from '@heroicons/react/24/outline';
 import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid';
 

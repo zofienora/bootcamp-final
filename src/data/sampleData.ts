@@ -1,4 +1,4 @@
-import { Tip, PhaseData } from '../types';
+import type { Tip, PhaseData } from '../types';
 
 export const sampleTips: Tip[] = [
   // Menstrual Phase Tips

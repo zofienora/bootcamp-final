@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { UserData, CycleInfo, Tip } from './types';
+import type { UserData, CycleInfo, Tip } from './types';
 import { loadUserData, saveUserData, toggleFavorite } from './lib/storage';
 import { calculateCycleInfo } from './lib/cycleUtils';
 import { sampleTips } from './data/sampleData';

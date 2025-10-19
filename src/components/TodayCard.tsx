@@ -1,4 +1,4 @@
-import { CycleInfo, Tip } from '../types';
+import type { CycleInfo, Tip } from '../types';
 import { PhaseBadge } from './PhaseBadge';
 import { TipCard } from './TipCard';
 

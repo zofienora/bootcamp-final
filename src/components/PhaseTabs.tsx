@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CyclePhase, Tip } from '../types';
+import type { CyclePhase } from '../types';
 import { PhaseBadge } from './PhaseBadge';
 import { TipCard } from './TipCard';
 import { phaseData } from '../data/sampleData';

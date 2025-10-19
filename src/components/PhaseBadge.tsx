@@ -1,4 +1,4 @@
-import { CyclePhase } from '../types';
+import type { CyclePhase } from '../types';
 import { getPhaseDisplayName, getPhaseColor } from '../lib/cycleUtils';
 
 interface PhaseBadgeProps {

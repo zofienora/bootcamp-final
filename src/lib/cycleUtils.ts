@@ -1,4 +1,4 @@
-import { CyclePhase, CycleInfo, UserData } from '../types';
+import type { CyclePhase, CycleInfo, UserData } from '../types';
 
 /**
  * Calculate current cycle information based on start date and average length
@@ -28,7 +28,7 @@ export function calculateCycleInfo(userData: UserData): CycleInfo {
 /**
  * Determine cycle phase from day number
  */
-function getPhaseFromDay(day: number, cycleLength: number): CyclePhase {
+function getPhaseFromDay(day: number, _cycleLength: number): CyclePhase {
   if (day <= 5) return 'menstrual';
   if (day <= 13) return 'follicular';
   if (day <= 16) return 'ovulatory';
@@ -51,7 +51,7 @@ function getPhaseInfo(phase: CyclePhase) {
 /**
  * Calculate days spent in current phase
  */
-function getDaysInPhase(day: number, phase: CyclePhase, cycleLength: number): number {
+function getDaysInPhase(day: number, phase: CyclePhase, _cycleLength: number): number {
   const phaseStarts = {
     menstrual: 1,
     follicular: 6,
